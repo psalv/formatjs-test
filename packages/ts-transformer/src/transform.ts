@@ -348,6 +348,7 @@ function extractMessageDescriptor(
                 : msg.defaultMessage,
             }
           );
+          msg.defaultMessage = `__IF_LOCAL_MSG__${msg.id}__`;
         }
         break;
       case 'function':
@@ -357,6 +358,7 @@ function extractMessageDescriptor(
           msg.description,
           sf.fileName
         );
+        msg.defaultMessage = `__IF_LOCAL_MSG__${msg.id}__`;
         break;
     }
   }
